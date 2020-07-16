@@ -6,9 +6,14 @@ class Receipts extends Component {
 
     return (
       <div>
+
         {this.props.receipts.map((receipt) => (
-          <p>{receipt.message}</p>
+          <div>
+            <p><strong>{receipt.actor.name}</strong> paid <strong>{receipt.transactions[0].target.name}</strong></p>
+            <p>{receipt.message}</p>
+          </div>
         ))}
+
       </div>
     )
   }

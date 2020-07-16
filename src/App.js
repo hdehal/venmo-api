@@ -28,7 +28,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        Venmo API App
+        <h1>Latest Venmo Receipts</h1>
         <Receipts receipts={this.state.receipts} />
       </div>
     )

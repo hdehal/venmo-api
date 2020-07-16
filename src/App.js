@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 import Receipts from './components/receipts';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class App extends React.Component {
 
@@ -28,8 +32,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Latest Venmo Receipts</h1>
-        <Receipts receipts={this.state.receipts} />
+
+        <Container fluid>
+          <Row>
+            <Col>
+              <h4>Latest Venmo Receipts</h4>
+              <Receipts receipts={this.state.receipts} />
+            </Col>
+          </Row>
+        </Container>
+
       </div>
     )
   }

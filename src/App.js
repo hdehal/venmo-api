@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Receipts from './components/receipts';
 
 class App extends React.Component {
 
@@ -17,7 +18,7 @@ class App extends React.Component {
     fetch('https://cors-anywhere.herokuapp.com/https://venmo.com/api/v5/public')
       .then(res => res.json())
       .then((data) => {
-        this.setState({ contacts: data })
+        this.setState({ receipts: data.data })
       })
       .catch(function (err) {
         console.log('Fetch Error :-S', err);
@@ -28,6 +29,7 @@ class App extends React.Component {
     return (
       <div className="App">
         Venmo API App
+        <Receipts receipts={this.state.receipts} />
       </div>
     )
   }

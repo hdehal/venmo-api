@@ -18,7 +18,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // Using the public CORS-Anywhere vs local deployment for testing
+    // Using the public "CORS Anywhere" proxy server for testing
     fetch('https://cors-anywhere.herokuapp.com/https://venmo.com/api/v5/public')
       .then(res => res.json())
       .then((data) => {
@@ -37,6 +37,11 @@ class App extends React.Component {
           <Row>
             <Col>
               <h4>Latest Venmo Receipts</h4>
+              <div>
+                Data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer">
+                  <code>https://venmo.com/api/v5/public</code>
+                </a>
+              </div>
               <Receipts receipts={this.state.receipts} />
             </Col>
           </Row>

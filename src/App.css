@@ -1,0 +1,41 @@
+body {
+  background: #fafafa !important;
+  padding: 0.4em;
+}
+.App {
+  background: transparent;
+  text-align: center;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#receiptsContainer {
+  margin: 0.8em;
+}
+.card-subtitle {
+  font-size: 1em !important;
+}
+.card {
+  font-size: 0.8em;
+  width: 18rem;
+  padding: 1em 0em 0em 0em;
+  animation-name: animateCards;
+  animation-duration: 400ms;
+  animation-delay: calc(var(--animation-order) * 100ms);
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+.card-body {
+  padding: 0.2em !important;
+}
+@keyframes animateCards {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-10px);
+  } 
+  100% {
+    opacity: 1;
+  }
+}

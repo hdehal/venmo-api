@@ -22,7 +22,7 @@ class App extends React.Component {
 
   componentDidMount() {
     // Private whitelist-restricted Heroku deployment of "CORS Anywhere"
-    fetch('https://mysterious-forest-39818.herokuapp.com/https://venmo.com/api/v5/public')
+    fetch('https://hdehal-cors.herokuapp.com/https://venmo.com/api/v5/public')
       .then(res => res.json())
       .then((data) => {
         // Last 8 records into state only

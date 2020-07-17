@@ -24,7 +24,8 @@ class App extends React.Component {
     fetch('https://cors-anywhere.herokuapp.com/https://venmo.com/api/v5/public')
       .then(res => res.json())
       .then((data) => {
-        this.setState({ receipts: data.data, loading: false })
+        // Last 8 records into state only
+        this.setState({ receipts: data.data.slice(0, 8), loading: false })
       })
       .catch(function (err) {
         console.log('Fetch Error :-S', err);
@@ -46,8 +47,8 @@ class App extends React.Component {
               </div>
               {this.state.loading
                 ? <Spinner animation="border" role="status" variant="primary">
-                    <span className="sr-only">Loading...</span>
-                  </Spinner>
+                  <span className="sr-only">Loading...</span>
+                </Spinner>
                 : <Receipts receipts={this.state.receipts} />}
             </Col>
           </Row>

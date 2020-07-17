@@ -58,6 +58,7 @@ class Receipts extends Component {
     super(props);
 
     this.state = {
+      rates: "$"
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -74,21 +75,26 @@ class Receipts extends Component {
   handleChange(e) {
     // Update prices by currency
     updatePrices(rates[e.target.value]);
+
     // Update currency symbol
     updateSymbols(symbols[e.target.value]);
+
+    // Update state
+    this.setState({
+      rates: symbols[e.target.value]
+    })
   }
 
   render() {
 
     return (
       <div>
-
         <Row className="justify-content-md-center">
           <ListGroup horizontal id="selector" onClick={this.handleChange}>
-            <ListGroup.Item value="USD" action>$</ListGroup.Item>
-            <ListGroup.Item value="EUR" action>€</ListGroup.Item>
-            <ListGroup.Item value="JPY" action>¥</ListGroup.Item>
-            <ListGroup.Item value="GBP" action>£</ListGroup.Item>
+            <ListGroup.Item value="USD" className={this.state.rates === "$" ? "active" : null} action>$</ListGroup.Item>
+            <ListGroup.Item value="EUR" className={this.state.rates === "€" ? "active" : null} action>€</ListGroup.Item>
+            <ListGroup.Item value="JPY" className={this.state.rates === "¥" ? "active" : null} action>¥</ListGroup.Item>
+            <ListGroup.Item value="GBP" className={this.state.rates === "£" ? "active" : null} action>£</ListGroup.Item>
           </ListGroup>
         </Row>
 

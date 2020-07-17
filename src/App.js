@@ -42,12 +42,6 @@ class App extends React.Component {
             <Col xs={4}>
               <h5>Latest Venmo Transactions</h5>
               <Row className="justify-content-md-center">
-                <ListGroup horizontal>
-                  <ListGroup.Item action active>$</ListGroup.Item>
-                  <ListGroup.Item action>€</ListGroup.Item>
-                  <ListGroup.Item action>¥</ListGroup.Item>
-                  <ListGroup.Item action>£</ListGroup.Item>
-                </ListGroup>
 
                 <ListGroup horizontal>
                   <ListGroup.Item action active>EN</ListGroup.Item>

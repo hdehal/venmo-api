@@ -3,26 +3,17 @@ import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import ListGroup from 'react-bootstrap/ListGroup'
 
-var prices = [
-  140,
-  200,
-  342,
-  140,
-  140,
-  200,
-  342,
-  34
-];
+var prices = [ 140, 84.99, 10, 140, 500, 2400, 16.76, 34 ];
 
 var rates = {
-  USD: 1, // default rate
+  USD: 1, // Default rate
   EUR: 0.87,
   JPY: 106.98,
   GBP: 0.80
 }
 
 var symbols = {
-  USD: "$", // default symbol
+  USD: "$", // Default symbol
   EUR: "€",
   JPY: "¥",
   GBP: "£"
@@ -79,7 +70,7 @@ class Receipts extends Component {
     // Update currency symbol
     updateSymbols(symbols[e.target.value]);
 
-    // Update state
+    // Update state with active currency
     this.setState({
       rates: symbols[e.target.value]
     })

@@ -17,7 +17,8 @@ class App extends React.Component {
 
     this.state = {
       receipts: [],
-      loading: true
+      loading: true,
+      language: "en"
     }
   }
 
@@ -40,6 +41,11 @@ class App extends React.Component {
 
     const changeLanguage = (lng) => {
       i18n.changeLanguage(lng);
+      
+      // Set language to state
+      this.setState({
+        language: lng
+      })
     };
 
     return (
@@ -52,14 +58,14 @@ class App extends React.Component {
               <Row className="justify-content-center">
                 <p>
                   This demo uses data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a> to test currency conversion, internationalization (i18n), and accessibility (a11y).
-              </p>
+                </p>
               </Row>
               <Row className="justify-content-center">
                 <ListGroup horizontal>
-                  <ListGroup.Item onClick={() => changeLanguage('en')} action active>EN</ListGroup.Item>
-                  <ListGroup.Item onClick={() => changeLanguage('de')} action>DE</ListGroup.Item>
-                  <ListGroup.Item onClick={() => changeLanguage('fr')} action>FR</ListGroup.Item>
-                  <ListGroup.Item onClick={() => changeLanguage('jp')} action>JP</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('en')} action className={this.state.language === "en" ? "active" : null}>EN</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('de')} action className={this.state.language === "de" ? "active" : null}>DE</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('fr')} action className={this.state.language === "fr" ? "active" : null}>FR</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('jp')} action className={this.state.language === "jp" ? "active" : null}>JP</ListGroup.Item>
                 </ListGroup>
               </Row>
               {this.state.loading

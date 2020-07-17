@@ -38,11 +38,15 @@ class App extends React.Component {
       <div className="App">
 
         <Container fluid>
-          <Row className="justify-content-md-center">
-            <Col xs={4}>
+          <Row className="justify-content-center">
+            <Col>
               <h5>Latest Venmo Transactions</h5>
-              <Row className="justify-content-md-center">
-
+              <Row className="justify-content-center">
+              <p>
+                This demo uses data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a> to test currency conversion, internationalization (i18n), and accessibility (a11y).
+              </p>
+              </Row>
+              <Row className="justify-content-center">
                 <ListGroup horizontal>
                   <ListGroup.Item action active>EN</ListGroup.Item>
                   <ListGroup.Item action>DE</ListGroup.Item>
@@ -50,9 +54,6 @@ class App extends React.Component {
                   <ListGroup.Item action>JP</ListGroup.Item>
                 </ListGroup>
               </Row>
-              <p>
-                This demo uses data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a> to test currency conversion, internationalization (i18n), and accessibility (a11y).
-              </p>
               {this.state.loading
                 ? <Spinner animation="border" role="status" variant="primary">
                   <span className="sr-only">Loading...</span>

@@ -80,7 +80,7 @@ class Receipts extends Component {
 
     return (
       <div>
-        <Row className="justify-content-md-center">
+        <Row className="justify-content-center">
           <ListGroup horizontal id="selector" onClick={this.handleChange}>
             <ListGroup.Item value="USD" className={this.state.rates === "$" ? "active" : null} action>$</ListGroup.Item>
             <ListGroup.Item value="EUR" className={this.state.rates === "€" ? "active" : null} action>€</ListGroup.Item>

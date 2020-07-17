@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Spinner from 'react-bootstrap/Spinner'
 
 class App extends React.Component {
 
@@ -13,7 +14,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      receipts: []
+      receipts: [],
+      loading: true
     }
   }
 
@@ -22,7 +24,7 @@ class App extends React.Component {
     fetch('https://cors-anywhere.herokuapp.com/https://venmo.com/api/v5/public')
       .then(res => res.json())
       .then((data) => {
-        this.setState({ receipts: data.data })
+        this.setState({ receipts: data.data, loading: false })
       })
       .catch(function (err) {
         console.log('Fetch Error :-S', err);
@@ -42,7 +44,11 @@ class App extends React.Component {
                   <code>https://venmo.com/api/v5/public</code>
                 </a>
               </div>
-              <Receipts receipts={this.state.receipts} />
+              {this.state.loading
+                ? <Spinner animation="border" role="status" variant="primary">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                : <Receipts receipts={this.state.receipts} />}
             </Col>
           </Row>
         </Container>

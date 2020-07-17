@@ -1,5 +1,6 @@
 {
   "name": "venmo-api",
+  "homepage": "https://hdehal.github.io/venmo-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "deploy": "yarn run build && gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }

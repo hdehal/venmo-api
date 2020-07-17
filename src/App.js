@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Receipts from './components/receipts';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Spinner from 'react-bootstrap/Spinner'
-import ListGroup from 'react-bootstrap/ListGroup'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Spinner from 'react-bootstrap/Spinner';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { withTranslation } from 'react-i18next';
 
 class App extends React.Component {
 
@@ -34,24 +35,31 @@ class App extends React.Component {
   }
 
   render() {
+
+    const { t, i18n } = this.props;
+
+    const changeLanguage = (lng) => {
+      i18n.changeLanguage(lng);
+    };
+
     return (
       <div className="App">
 
         <Container fluid>
           <Row className="justify-content-center">
             <Col>
-              <h5>Latest Venmo Transactions</h5>
+              <h5>{t('Latest Venmo Transactions')}</h5>
               <Row className="justify-content-center">
-              <p>
-                This demo uses data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a> to test currency conversion, internationalization (i18n), and accessibility (a11y).
+                <p>
+                  This demo uses data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a> to test currency conversion, internationalization (i18n), and accessibility (a11y).
               </p>
               </Row>
               <Row className="justify-content-center">
                 <ListGroup horizontal>
-                  <ListGroup.Item action active>EN</ListGroup.Item>
-                  <ListGroup.Item action>DE</ListGroup.Item>
-                  <ListGroup.Item action>FR</ListGroup.Item>
-                  <ListGroup.Item action>JP</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('en')} action active>EN</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('de')} action>DE</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('fr')} action>FR</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('jp')} action>JP</ListGroup.Item>
                 </ListGroup>
               </Row>
               {this.state.loading
@@ -68,4 +76,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withTranslation('translations')(App);

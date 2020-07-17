@@ -38,11 +38,16 @@ function updatePrices(rate) {
 }
 
 // Update symbols
-function updateSymbol(symbol) {
+// See also: https://docs.microsoft.com/en-us/globalization/locale/currency-formatting
+function updateSymbols(symbol) {
   var elements = document.getElementsByClassName("price");
 
   prices.forEach((price, index) => {
-    elements[index].innerHTML += symbol;
+    if (symbol !== "€") {
+      elements[index].insertAdjacentHTML("afterbegin", symbol);
+    } else {
+      elements[index].insertAdjacentHTML("beforeend", symbol);
+    }
   });
 }
 
@@ -62,13 +67,15 @@ class Receipts extends Component {
   componentDidMount() {
     // Initial prices
     updatePrices(rates.USD);
+    // Initial symbols
+    updateSymbols(symbols.USD);
   }
 
   handleChange(e) {
     // Update prices by currency
     updatePrices(rates[e.target.value]);
-    // Append currency symbol
-    updateSymbol(symbols[e.target.value]);
+    // Update currency symbol
+    updateSymbols(symbols[e.target.value]);
   }
 
   render() {

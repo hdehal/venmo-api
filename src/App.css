@@ -53,11 +53,11 @@ body {
   font-size: 0.9em;
   padding: .3rem 0.6rem !important;
 }
-.list-group-horizontal:nth-last-of-type(1) {
-  padding-top: 0.3em;
+#receiptsContainer .list-group-horizontal {
+  padding-bottom: 0.6em;
 }
 p {
-  margin: 0.2em !important;
+  margin: 0em 0em 1em 0em !important;
   width: 45vw;
 }
 @media only screen and (max-width : 720px) {

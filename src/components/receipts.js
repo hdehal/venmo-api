@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Card from 'react-bootstrap/Card'
-import Row from 'react-bootstrap/Row'
-import ListGroup from 'react-bootstrap/ListGroup'
+import Card from 'react-bootstrap/Card';
+import Row from 'react-bootstrap/Row';
+import ListGroup from 'react-bootstrap/ListGroup';
 
-var prices = [ 140, 84.99, 10, 140, 500, 2400, 16.76, 34 ];
+var prices = [140, 84.99, 10, 140, 500, 2400, 16.76, 34];
 
 var rates = {
   USD: 1, // Default rate
@@ -53,7 +53,6 @@ class Receipts extends Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
-
   }
 
   componentDidMount() {
@@ -79,35 +78,33 @@ class Receipts extends Component {
   render() {
 
     return (
-      <div>
+      <div id="receiptsContainer" className="justify-content-center">
         <Row className="justify-content-center">
           <ListGroup horizontal id="selector" onClick={this.handleChange}>
             <ListGroup.Item value="USD" className={this.state.rates === "$" ? "active" : null} action>$</ListGroup.Item>
+            <ListGroup.Item value="GBP" className={this.state.rates === "£" ? "active" : null} action>£</ListGroup.Item>
             <ListGroup.Item value="EUR" className={this.state.rates === "€" ? "active" : null} action>€</ListGroup.Item>
             <ListGroup.Item value="JPY" className={this.state.rates === "¥" ? "active" : null} action>¥</ListGroup.Item>
-            <ListGroup.Item value="GBP" className={this.state.rates === "£" ? "active" : null} action>£</ListGroup.Item>
           </ListGroup>
         </Row>
 
         {this.props.receipts.map((receipt, i) => (
-          <div id="receiptsContainer" className="center">
-            <Card style={{ "--animation-order": i }} className="toast">
-              <Card.Subtitle>
-                {/* Real fake names to protect the innocent via Venmo public API */}
-                <strong>{receipt.actor.firstname}</strong> paid
+          <Card style={{ "--animation-order": i }} className="toast" key={i}>
+            <Card.Subtitle>
+              {/* Real fake names to protect the innocent via Venmo public API */}
+              <strong>{receipt.actor.firstname}</strong> paid
                 <strong> {receipt.transactions[0].target.firstname} </strong>
-                {/* Fake cash monies for demo purposes */}
-                <span className="alert-success price">
-                </span>
-              </Card.Subtitle>
-              <Card.Body>
-                {receipt.message}
-              </Card.Body>
-            </Card>
-          </div>
+              {/* Fake cash monies for demo purposes */}
+              <span className="alert-success price">
+              </span>
+            </Card.Subtitle>
+            <Card.Body>
+              {receipt.message}
+            </Card.Body>
+          </Card>
         ))}
-
       </div>
+
     )
   }
 }

@@ -17,8 +17,7 @@ class App extends React.Component {
 
     this.state = {
       receipts: [],
-      loading: true,
-      language: "en"
+      loading: true
     }
   }
 
@@ -39,13 +38,10 @@ class App extends React.Component {
 
     const { i18n } = this.props;
 
+    const currentLang = (Array.isArray(i18n.languages)) ? i18n.languages[0] : i18n.languages;
+
     const changeLanguage = (lng) => {
       i18n.changeLanguage(lng);
-
-      // Set language to state
-      this.setState({
-        language: lng
-      })
     };
 
     return (
@@ -60,19 +56,16 @@ class App extends React.Component {
                   <Trans i18nKey="intro">
                     This simple React app uses Venmo API data as a test playground for currency conversion, internationalization (i18n), and accessibility (a11y).
                   </Trans>
-                </p>
-              </Row>
-              <Row className="justify-content-center">
-                <p>
+                  <br />
                   <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a>
                 </p>
               </Row>
               <Row className="justify-content-center">
                 <ListGroup horizontal>
-                  <ListGroup.Item onClick={() => changeLanguage('en')} action className={this.state.language === "en" ? "active" : null}>EN</ListGroup.Item>
-                  <ListGroup.Item onClick={() => changeLanguage('de')} action className={this.state.language === "de" ? "active" : null}>DE</ListGroup.Item>
-                  <ListGroup.Item onClick={() => changeLanguage('fr')} action className={this.state.language === "fr" ? "active" : null}>FR</ListGroup.Item>
-                  <ListGroup.Item onClick={() => changeLanguage('jp')} action className={this.state.language === "jp" ? "active" : null}>JP</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('en')} action className={currentLang === "en" ? "active" : null}>EN</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('de')} action className={currentLang === "de" ? "active" : null}>DE</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('fr')} action className={currentLang === "fr" ? "active" : null}>FR</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('jp')} action className={currentLang === "jp" ? "active" : null}>JP</ListGroup.Item>
                 </ListGroup>
               </Row>
               {this.state.loading

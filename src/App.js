@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { withTranslation } from 'react-i18next';
+import { withTranslation, Trans } from 'react-i18next';
 
 class App extends React.Component {
 
@@ -37,11 +37,11 @@ class App extends React.Component {
 
   render() {
 
-    const { t, i18n } = this.props;
+    const { i18n } = this.props;
 
     const changeLanguage = (lng) => {
       i18n.changeLanguage(lng);
-      
+
       // Set language to state
       this.setState({
         language: lng
@@ -54,10 +54,17 @@ class App extends React.Component {
         <Container fluid>
           <Row className="justify-content-center">
             <Col>
-              <h5>{t('Latest Venmo Transactions')}</h5>
+              <h5><Trans i18nKey="heading"></Trans></h5>
               <Row className="justify-content-center">
                 <p>
-                  This demo uses data from <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a> to test currency conversion, internationalization (i18n), and accessibility (a11y).
+                  <Trans i18nKey="intro">
+                    This simple React app uses Venmo API data as a test playground for currency conversion, internationalization (i18n), and accessibility (a11y).
+                  </Trans>
+                </p>
+              </Row>
+              <Row className="justify-content-center">
+                <p>
+                  <a href="https://venmo.com/api/v5/public" target="_blank" rel="noopener noreferrer"><code>https://venmo.com/api/v5/public</code></a>
                 </p>
               </Row>
               <Row className="justify-content-center">

@@ -37,6 +37,9 @@ body {
 .card-body {
   padding: 0.2em !important;
 }
+.emoji {
+  height: 1em;
+}
 @keyframes animateCards {
   0% {
     opacity: 0;

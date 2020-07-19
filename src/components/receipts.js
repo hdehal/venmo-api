@@ -19,6 +19,17 @@ var symbols = {
   GBP: "£"
 }
 
+var emojis = ["💌", "🥕", "☕", "💸", "🙏", "🏠", "🍕", "💃"]
+
+// Update emojis
+function updateEmoji(emoji) {
+  var elements = document.getElementsByClassName("message");
+
+  emojis.forEach((emoji, index) => {
+    elements[index].insertAdjacentHTML("beforeend", ' ' + emoji);
+  });
+}
+
 // Update prices
 function updatePrices(rate) {
   var elements = document.getElementsByClassName("price");
@@ -60,6 +71,13 @@ class Receipts extends Component {
     updatePrices(rates.USD);
     // Initial symbols
     updateSymbols(symbols.USD);
+
+    // On mobile or macOS only -- to avoid emoji issues in early Windows variants
+    if (/Android|webOS|Mac|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
+      // Add emojis to spice things up
+      updateEmoji(emojis);
+    }
+
   }
 
   handleChange(e) {
@@ -98,7 +116,7 @@ class Receipts extends Component {
               <span className="alert-success price">
               </span>
             </Card.Subtitle>
-            <Card.Body>
+            <Card.Body className="message">
               {receipt.message}
             </Card.Body>
           </Card>

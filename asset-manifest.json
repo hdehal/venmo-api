@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/venmo-api/static/css/main.3d9d4bb2.chunk.css",
+    "main.css": "/venmo-api/static/css/main.9ea291ef.chunk.css",
     "main.js": "/venmo-api/static/js/main.36dd078c.chunk.js",
     "main.js.map": "/venmo-api/static/js/main.36dd078c.chunk.js.map",
     "runtime-main.js": "/venmo-api/static/js/runtime-main.7c90445d.js",
@@ -9,17 +9,17 @@
     "static/js/2.56225f40.chunk.js": "/venmo-api/static/js/2.56225f40.chunk.js",
     "static/js/2.56225f40.chunk.js.map": "/venmo-api/static/js/2.56225f40.chunk.js.map",
     "index.html": "/venmo-api/index.html",
-    "precache-manifest.a5cd2be5c9d50526d61b839bf9edebd8.js": "/venmo-api/precache-manifest.a5cd2be5c9d50526d61b839bf9edebd8.js",
+    "precache-manifest.df61fe6afb0f1c7cd55727ec0f314e58.js": "/venmo-api/precache-manifest.df61fe6afb0f1c7cd55727ec0f314e58.js",
     "service-worker.js": "/venmo-api/service-worker.js",
     "static/css/2.af3c1da9.chunk.css.map": "/venmo-api/static/css/2.af3c1da9.chunk.css.map",
-    "static/css/main.3d9d4bb2.chunk.css.map": "/venmo-api/static/css/main.3d9d4bb2.chunk.css.map",
+    "static/css/main.9ea291ef.chunk.css.map": "/venmo-api/static/css/main.9ea291ef.chunk.css.map",
     "static/js/2.56225f40.chunk.js.LICENSE.txt": "/venmo-api/static/js/2.56225f40.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7c90445d.js",
     "static/css/2.af3c1da9.chunk.css",
     "static/js/2.56225f40.chunk.js",
-    "static/css/main.3d9d4bb2.chunk.css",
+    "static/css/main.9ea291ef.chunk.css",
     "static/js/main.36dd078c.chunk.js"
   ]
 }

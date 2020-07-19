@@ -5,6 +5,7 @@ body {
 .App {
   background: transparent;
   text-align: center;
+  padding: 0.2em;
 }
 .center {
   display: flex;
@@ -61,5 +62,8 @@ p {
   width: 45vw;
 }
 @media only screen and (max-width : 720px) {
-  p { width: 95vw; }
+  p {
+    width: 95vw;
+    font-size: 0.9em;
+  }
 }

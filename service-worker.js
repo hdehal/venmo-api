@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/venmo-api/precache-manifest.5fc1e2195882cd68983e66bfbc1fc446.js"
+  "/venmo-api/precache-manifest.4487205ddcd5a041ee03b38ee1c426f5.js"
 );
 
 self.addEventListener('message', (event) => {

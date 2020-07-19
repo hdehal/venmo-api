@@ -33,6 +33,7 @@ i18n
             }
         },
         fallbackLng: 'en',
+        load: 'languageOnly',
         debug: false,
 
         // Common namespace used around the full app

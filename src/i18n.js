@@ -10,7 +10,7 @@ i18n
             en: {
                 translations: {
                     heading: "Latest Venmo Transactions",
-                    intro: "This simple React app uses Venmo API data as a test playground for currency conversion, internationalization (i18n), and accessibility (a11y).",
+                    intro: "This simple React demo app uses Venmo API data as a test playground for currency conversion, internationalization (i18n), and accessibility (a11y).",
                     paid: "paid"
                 }
             },
@@ -24,7 +24,7 @@ i18n
             fr: {
                 translations: {
                     heading: "Dernières transactions Venmo",
-                    intro: "Cette application React simple utilise les données de l'API Venmo comme terrain de jeu de test pour la conversion de devises, l'internationalisation (i18n) et l'accessibilité (a11y).",
+                    intro: "Cette application React utilise les données de l'API Venmo comme terrain de jeu pour la conversion de devises, l'internationalisation (i18n) et l'accessibilité (a11y).",
                     paid: "payé"
                 }
             },

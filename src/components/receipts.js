@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { Trans } from 'react-i18next';
+import { withTranslation } from "react-i18next";
 
 var prices = [140, 84.99, 10, 140, 500, 2400, 16.76, 34];
 
@@ -96,6 +96,8 @@ class Receipts extends Component {
 
   render() {
 
+    const { t } = this.props;
+
     return (
       <div id="receiptsContainer" className="justify-content-center">
         <Row className="justify-content-center">
@@ -111,8 +113,8 @@ class Receipts extends Component {
           <Card style={{ "--animation-order": i }} className="toast" key={i}>
             <Card.Subtitle>
               {/* Real fake names to protect the innocent via Venmo public API */}
-              <strong>{receipt.actor.firstname}</strong> <Trans i18nKey="paid"></Trans>
-                <strong> {receipt.transactions[0].target.firstname} </strong>
+              <strong>{receipt.actor.firstname}</strong> {t('paid')}
+              <strong> {receipt.transactions[0].target.firstname} </strong>
               {/* Fake cash monies for demo purposes */}
               <span className="alert-success price">
               </span>
@@ -128,4 +130,4 @@ class Receipts extends Component {
   }
 }
 
-export default Receipts;
+export default withTranslation()(Receipts);

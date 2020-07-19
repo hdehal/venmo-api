@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { withTranslation, Trans } from 'react-i18next';
+import { Trans } from 'react-i18next';
 
 var prices = [140, 84.99, 10, 140, 500, 2400, 16.76, 34];
 

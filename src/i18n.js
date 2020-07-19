@@ -16,14 +16,14 @@ i18n
             },
             de: {
                 translations: {
-                    heading: "Neueste Venmo-Transaktionen",
+                    heading: "Neueste Venmo Transaktionen",
                     intro: "Diese einfache React-App verwendet Venmo-API-Daten als Testspielplatz für Währungsumrechnung, Internationalisierung (i18n) und Barrierefreiheit (a11y).",
                     paid: "bezahlt"
                 }
             },
             fr: {
                 translations: {
-                    heading: "Dernières transactions Venmo",
+                    heading: "Dernières Transactions Venmo",
                     intro: "Cette application React utilise les données de l'API Venmo comme terrain de jeu pour la conversion de devises, l'internationalisation (i18n) et l'accessibilité (a11y).",
                     paid: "payé"
                 }

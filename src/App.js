@@ -17,7 +17,7 @@ class App extends React.Component {
 
     this.state = {
       receipts: [],
-      loading: true
+      loading: true,
     }
   }
 
@@ -72,7 +72,7 @@ class App extends React.Component {
                 ? <Spinner animation="border" role="status" variant="primary">
                   <span className="sr-only">Loading...</span>
                 </Spinner>
-                : <Receipts receipts={this.state.receipts} />}
+                : <Receipts receipts={this.state.receipts} i18n={i18n} />}
             </Col>
           </Row>
         </Container>
@@ -82,4 +82,4 @@ class App extends React.Component {
   }
 }
 
-export default withTranslation('translations')(App);
+export default withTranslation()(App);

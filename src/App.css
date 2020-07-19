@@ -62,11 +62,19 @@ body {
 }
 p {
   margin: 0em 0em 1em 0em !important;
-  width: 45vw;
+  width: 50vw;
+}
+a > code {
+  font-size: 1em;
+}
+@media only screen and (min-width : 1200px) {
+  p {
+    width: 31vw;
+  }
 }
 @media only screen and (max-width : 720px) {
   p {
     width: 95vw;
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }

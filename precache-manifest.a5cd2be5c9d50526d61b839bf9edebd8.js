@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "88beeb51d323b2b3f86f4040d8ab8891",
+    "revision": "721aa9e281a5639d9e7358bd74a5fcdb",
     "url": "/venmo-api/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/venmo-api/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "075ee1b3d1329c97f603",
+    "revision": "5faf35033093b2ced005",
     "url": "/venmo-api/static/css/main.3d9d4bb2.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/venmo-api/static/js/2.56225f40.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "075ee1b3d1329c97f603",
-    "url": "/venmo-api/static/js/main.5f152b40.chunk.js"
+    "revision": "5faf35033093b2ced005",
+    "url": "/venmo-api/static/js/main.36dd078c.chunk.js"
   },
   {
     "revision": "1e9a6e3bf394965accea",

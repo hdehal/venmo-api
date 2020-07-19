@@ -62,7 +62,7 @@ class App extends React.Component {
               </Row>
               <Row className="justify-content-center">
                 <ListGroup horizontal>
-                  <ListGroup.Item onClick={() => changeLanguage('en')} action className={currentLang === "en" || currentLang === "en-US" ? "active" : null}>EN</ListGroup.Item>
+                  <ListGroup.Item onClick={() => changeLanguage('en')} action className={currentLang === "en" ? "active" : null}>EN</ListGroup.Item>
                   <ListGroup.Item onClick={() => changeLanguage('de')} action className={currentLang === "de" ? "active" : null}>DE</ListGroup.Item>
                   <ListGroup.Item onClick={() => changeLanguage('fr')} action className={currentLang === "fr" ? "active" : null}>FR</ListGroup.Item>
                   <ListGroup.Item onClick={() => changeLanguage('jp')} action className={currentLang === "jp" ? "active" : null}>JP</ListGroup.Item>

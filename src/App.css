@@ -73,8 +73,51 @@ a > code {
   }
 }
 @media only screen and (max-width : 720px) {
-  p {
+  p, .loading {
     width: 95vw;
-    font-size: 0.8em;
+    font-size: 0.8em !important;
   }
+}
+/* Loading animations for API delays */
+.loading {
+  text-align: center; 
+  margin: -0.5em;
+  font-weight: bold;
+  font-size: 1em;
+  color: #007bff;
+  -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+  animation: 2s ease 0s normal forwards 1 fadein;
+}
+@keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes fadein{
+  0% { opacity:0; }
+  66% { opacity:0; }
+  100% { opacity:1; }
+}
+.loading:after {
+  overflow: hidden;
+  display: inline;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4,end) 1s infinite;      
+  animation: ellipsis steps(4,end) 1s infinite;
+  content: "\2026"; /* ascii for ellipsis character */
+  width: 0px;
+}
+@keyframes ellipsis {
+  0% { opacity: 0.25; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0.25; }
+}
+@-webkit-keyframes ellipsis {
+  0% { opacity: 0.25; }
+  25% { opacity: 1; }
+  50% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0.25; }
 }

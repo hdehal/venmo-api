@@ -69,9 +69,10 @@ class App extends React.Component {
                 </ListGroup>
               </Row>
               {this.state.loading
-                ? <Spinner animation="border" role="status" variant="primary">
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
+                ? <><Spinner animation="border" role="status" variant="primary"></Spinner>
+                  <div className="loading">
+                    <Trans i18nKey="loading">Loading Venmo API</Trans>
+                  </div></>
                 : <Receipts receipts={this.state.receipts} i18n={i18n} />}
             </Col>
           </Row>
